@@ -16,8 +16,13 @@ namespace GameSix
                 string nome_inimigo = Console.ReadLine();
                 array_inimigos[i] = nome_inimigo;
                 Foe inimigo = new Foe(nome_inimigo);
+                
             }
-
+            Console.WriteLine(" ");
+            for(int j=0; j < array_inimigos.Length; j++)
+            {
+                Console.WriteLine($"Nome do Inimigo: {array_inimigos[j]}");
+            }
         }
     }
 }
