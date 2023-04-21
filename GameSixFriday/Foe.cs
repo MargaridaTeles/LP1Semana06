@@ -1,4 +1,4 @@
-namespace GameSix~Friday
+namespace GameSixFriday
 {
     public class Foe
     {
