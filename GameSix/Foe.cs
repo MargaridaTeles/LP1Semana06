@@ -49,5 +49,25 @@ namespace GameSix
             name = name.Trim(' ');
             this.name = name;
         }
+
+        public void PickupPowerUp(PowerUp powerup, float quantidade)
+        {
+            if(powerup == PowerUp.Health)
+            {
+                float antigoHP = this.Health;
+                this.Health += quantidade;
+                
+                if(Health > 100)
+                    Health = 100;
+            }
+            else if(powerup == PowerUp.Shield)
+            {
+                float antigoShield = this.Shield;
+                this.Shield += quantidade;
+
+                if(Shield > 100)
+                    Shield = 100;
+            }
+        }
     }
 }
