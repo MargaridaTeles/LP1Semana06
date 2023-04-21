@@ -8,21 +8,23 @@ namespace GameSix
         {
             Console.Write("Insira um número de Inimigos: ");
             int num_inimigos = int.Parse(Console.ReadLine());
-            string[] array_inimigos = new string[num_inimigos];
+            Foe[] array_inimigos = new Foe[num_inimigos];
 
             for (int i=0; i < array_inimigos.Length; i++)
             {
                 Console.Write("Insira um Nome: ");
                 string nome_inimigo = Console.ReadLine();
-                array_inimigos[i] = nome_inimigo;
-                Foe inimigo = new Foe(nome_inimigo);
-                
+                array_inimigos[i] = new Foe(nome_inimigo);
             }
             Console.WriteLine(" ");
-            for(int j=0; j < array_inimigos.Length; j++)
+            foreach(var inimigo in array_inimigos)
             {
-                Console.WriteLine($"Nome do Inimigo: {array_inimigos[j]}");
+                Console.WriteLine($"Nome do Inimigo: {inimigo.GetName()}");
             }
+
+            array_inimigos[0].TakeDamage(50);
+            array_inimigos[0].PickupPowerUp(PowerUp.Health, 30);
+            array_inimigos[0].PickupPowerUp(PowerUp.Shield, 60);
         }
     }
 }

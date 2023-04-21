@@ -54,19 +54,19 @@ namespace GameSix
         {
             if(powerup == PowerUp.Health)
             {
-                float antigoHP = this.Health;
-                this.Health += quantidade;
-                
-                if(Health > 100)
-                    Health = 100;
+                float antigoHP = this.health;
+                this.health += quantidade;
+
+                if(health > 100)
+                    health = 100;
             }
             else if(powerup == PowerUp.Shield)
             {
-                float antigoShield = this.Shield;
-                this.Shield += quantidade;
+                float antigoShield = this.shield;
+                this.shield += quantidade;
 
-                if(Shield > 100)
-                    Shield = 100;
+                if(shield > 100)
+                    shield = 100;
             }
         }
     }
