@@ -25,6 +25,8 @@ namespace GameSix
             array_inimigos[0].TakeDamage(50);
             array_inimigos[0].PickupPowerUp(PowerUp.Health, 30);
             array_inimigos[0].PickupPowerUp(PowerUp.Shield, 60);
+
+            Console.WriteLine($"\nPowerUps coletados: {Foe.GetPickedPowerUps()}");
         }
     }
 }

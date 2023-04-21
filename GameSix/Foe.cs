@@ -5,6 +5,12 @@ namespace GameSix
         private string name;
         private float health;
         private float shield;
+        private static int _countpowerups;
+
+        static Foe()
+        {
+            _countpowerups = 0;
+        }
 
         /// <summary>
         /// Construtor
@@ -68,6 +74,12 @@ namespace GameSix
                 if(shield > 100)
                     shield = 100;
             }
+            _countpowerups++;
+        }
+
+        public static int GetPickedPowerUps()
+        {
+            return _countpowerups;
         }
     }
 }
