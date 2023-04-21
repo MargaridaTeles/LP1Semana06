@@ -2,31 +2,34 @@
 
 namespace GameSixFriday
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
-            Console.Write("Insira um número de Inimigos: ");
-            int num_inimigos = int.Parse(Console.ReadLine());
-            Foe[] array_inimigos = new Foe[num_inimigos];
+            GameLevel gl = new GameLevel(15, Difficulty.Hard);
 
-            for (int i=0; i < array_inimigos.Length; i++)
-            {
-                Console.Write("Insira um Nome: ");
-                string nome_inimigo = Console.ReadLine();
-                array_inimigos[i] = new Foe(nome_inimigo);
-            }
-            Console.WriteLine(" ");
-            foreach(var inimigo in array_inimigos)
-            {
-                Console.WriteLine($"Nome do Inimigo: {inimigo.GetName()}");
-            }
+            gl.SetFoeInRoom(2, new Foe("Darth Vader"));
+            gl.SetFoeInRoom(5, new Foe("Borg Queen"));
+            gl.SetFoeInRoom(11, new Foe("Thanos"));
+            gl.SetFoeInRoom(12, new Foe("Xenomorph"));
 
-            array_inimigos[0].TakeDamage(50);
-            array_inimigos[0].PickupPowerUp(PowerUp.Health, 30);
-            array_inimigos[0].PickupPowerUp(PowerUp.Shield, 60);
+            Console.WriteLine($"Difficulty: {gl.GetDifficulty()}");
 
-            Console.WriteLine($"\nPowerUps coletados: {Foe.GetPickedPowerUps()}");
+            Console.WriteLine($"Number of rooms: {gl.GetNumRooms()}");
+
+            Console.WriteLine($"Number of foes: {gl.GetNumFoes()}");
+
+            gl.PrintFoes();
+
+            // Este programa mostra o seguinte no ecrã:
+            //
+            // Difficulty: Hard
+            // Number of rooms: 15
+            // Number of foes: 4
+            // Room 2: Darth Vader
+            // Room 5: Borg Queen
+            // Room 11: Thanos
+            // Room 12: Xenomorph
         }
     }
 }
