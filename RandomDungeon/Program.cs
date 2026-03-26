@@ -53,7 +53,7 @@ namespace RandomDungeon
                 do
                 {
                     defenderIndex = random.Next(enemies.Count);
-                    
+
                 }while(defenderIndex != attackerIndex);
                 
                 // Obter os Objetos Atacante e Defensor
@@ -61,7 +61,6 @@ namespace RandomDungeon
                 Enemy defender = enemies[defenderIndex];
 
                 arena.Battle(attacker, defender);
-
             }
 
             Console.WriteLine($"{arena.GetEnemies()[0].GetName()} Wins!");

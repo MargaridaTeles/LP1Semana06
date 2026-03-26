@@ -76,7 +76,6 @@ namespace RandomDungeon
             int attack = random.Next(5, 20);
 
             return new Enemy(name, health, attack);
-
         }
     }
 }
