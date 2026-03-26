@@ -1,2 +1,4 @@
 <Solution>
+  <Project Path="RandDice/RandDice.csproj" />
+  <Project Path="RandomTest/RandomTest.csproj" />
 </Solution>
