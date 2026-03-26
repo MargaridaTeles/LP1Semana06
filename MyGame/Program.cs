@@ -21,6 +21,22 @@ namespace MyGame
             {
                 Console.WriteLine($"{enemies[j].GetName()} {enemies[j].GetHealth()} {enemies[j].GetShield()}");
             }
+
+            enemies[0].TakeDamage(50);
+            enemies[1].TakeDamage(17);
+
+            foreach (Enemy enemi in enemies)
+            {
+                Console.WriteLine($"Depois de dano: {enemi.GetHealth()} {enemi.GetShield()}");
+            }
+            
+            enemies[0].PickupPowerUp(PowerUp.Health, 20);
+            enemies[1].PickupPowerUp(PowerUp.Shield, 10);
+        
+            foreach (Enemy enemi in enemies)
+            {
+                Console.WriteLine($"Depois dos powerups: {enemi.GetHealth()} {enemi.GetShield()}");            
+            }
         }
     }
 }
