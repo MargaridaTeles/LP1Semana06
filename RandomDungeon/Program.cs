@@ -54,7 +54,7 @@ namespace RandomDungeon
                 {
                     defenderIndex = random.Next(enemies.Count);
 
-                }while(defenderIndex != attackerIndex);
+                }while(defenderIndex == attackerIndex);
                 
                 // Obter os Objetos Atacante e Defensor
                 Enemy attacker = enemies[attackerIndex];
