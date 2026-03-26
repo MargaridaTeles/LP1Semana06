@@ -8,6 +8,12 @@ namespace MyGame
         private string name;
         private float health;
         private float shield;
+        private static int totalPowerUp;
+
+        static Enemy()
+        {
+            totalPowerUp = 0;
+        }
 
         public Enemy(string name)
         {
@@ -63,6 +69,13 @@ namespace MyGame
                 shield += value;
                 if (shield > 100) shield = 100;
             }
+
+            totalPowerUp++;
+        }
+
+        public static int GetTotalPowerUps()
+        {
+            return totalPowerUp;
         }
     }
 }

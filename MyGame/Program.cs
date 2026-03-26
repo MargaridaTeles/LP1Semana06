@@ -35,8 +35,10 @@ namespace MyGame
         
             foreach (Enemy enemi in enemies)
             {
-                Console.WriteLine($"Depois dos powerups: {enemi.GetHealth()} {enemi.GetShield()}");            
+                Console.WriteLine($"Depois dos powerups: {enemi.GetHealth()} {enemi.GetShield()}");        
             }
+            
+            Console.WriteLine($"Total de powerups apanhados: {Enemy.GetTotalPowerUps()}");    
         }
     }
 }
